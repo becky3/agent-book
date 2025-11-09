@@ -37,4 +37,4 @@ class Settings(BaseSettings):
     def _set_env_variables(self):
         for key in self.__annotations__.keys():
             if key.isupper():
-                os.environ[key] = getattr(self, key)
+                os.environ[key] = str(getattr(self, key))
