@@ -47,7 +47,10 @@ def main():
     args = parser.parse_args()
 
     llm = ChatOpenAI(
-        model=settings.openai_smart_model, temperature=settings.temperature
+        base_url=settings.LMSTUDIO_BASE_URL,
+        api_key="lm-studio",
+        model=settings.LMSTUDIO_MODEL,
+        temperature=settings.temperature
     )
     goal_creator = PassiveGoalCreator(llm=llm)
     result: Goal = goal_creator.run(query=args.task)
