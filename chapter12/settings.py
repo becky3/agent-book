@@ -19,7 +19,7 @@ class Settings(BaseSettings):
     
     # LM Studio 接続設定
     LMSTUDIO_BASE_URL: str = "http://localhost:1234/v1"
-    LMSTUDIO_MODEL: str = "local-model"  # 例: "gpt-4o-mini-gguf" 等
+    LMSTUDIO_MODEL: str = "openai/gpt-oss-20b"  # 例: "gpt-4o-mini-gguf" 等
     TEMPERATURE: float = 0.0
     
     # for Application
