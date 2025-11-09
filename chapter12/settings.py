@@ -16,12 +16,18 @@ class Settings(BaseSettings):
     LANGCHAIN_ENDPOINT: str = "https://api.smith.langchain.com"
     LANGCHAIN_API_KEY: str = ""
     LANGCHAIN_PROJECT: str = "agent-book"
-
+    
+    # LM Studio 接続設定
+    LMSTUDIO_BASE_URL: str = "http://localhost:1234/v1"
+    LMSTUDIO_MODEL: str = "local-model"  # 例: "gpt-4o-mini-gguf" 等
+    TEMPERATURE: float = 0.0
+    
     # for Application
-    openai_smart_model: str = "gpt-4o-mini"
-    openai_embedding_model: str = "text-embedding-3-small"
-    anthropic_smart_model: str = "claude-3-5-sonnet-20240620"
+    openai_smart_model: str = ""
+    openai_embedding_model: str = ""
+    anthropic_smart_model: str = ""
     temperature: float = 0.0
+    
     default_reflection_db_path: str = "tmp/reflection_db.json"
 
     def __init__(self, **values):
